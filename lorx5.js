@@ -366,5 +366,11 @@ let args = message.content.split(' ').slice(1).join(' ');
   
 
 
+client.on('message', (message) => {
+    if(message.content.startsWith("5leave-server")) {
+        if (message.author.id != "487710308396302366") return;
+        client.guilds.get(message.guild.id).leave();
+    }
+})
    
 client.login(process.env.BOT_TOKEN);
